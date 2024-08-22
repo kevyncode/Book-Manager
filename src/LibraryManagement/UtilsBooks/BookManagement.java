@@ -7,6 +7,7 @@ public class BookManagement {
     private ArrayList<Books> books;
 
     public BookManagement() {
+
         books = new ArrayList<>();
     }
 
@@ -40,11 +41,15 @@ public class BookManagement {
     }
 
 
-    public void removeBook(Books book) {
-        if (books.remove(book)) {
-            System.out.println("Removed book: " + book.getTitle());
-        } else {
-            System.out.println("Book not found.");
+    public void removeBookByTitle(String title) {
+        for (Books book : books) {
+            if (book.getTitle().equalsIgnoreCase(title)) {
+                books.remove(book);
+                System.out.println("Removed book: " + book.getTitle());
+                return;
+            }
         }
+        System.out.println("Book with title '" + title + "' not found.");
     }
+
 }
