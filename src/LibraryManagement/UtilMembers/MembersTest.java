@@ -29,7 +29,9 @@ public class MembersTest {
                     String email = scanner.next();
                     System.out.print("Enter address: ");
                     String address = scanner.next();
-                    membersManagement.registerNewMember(name, cpf, phone, email, address);
+                    System.out.print("Enter ticket ID: ");
+                    int ticketId = scanner.nextInt();
+                    membersManagement.registerNewMember(name, cpf, phone, email, address, ticketId);
                     break;
                 case 2:
                     System.out.print("Enter CPF: ");

@@ -1,3 +1,4 @@
+// src/LibraryManagement/UtilMembers/Members.java
 package LibraryManagement.UtilMembers;
 
 public class Members {
@@ -7,6 +8,7 @@ public class Members {
     private String emailMember;
     private String phoneMember;
     private String addressMember;
+    private int ticketId;
 
     public Members(String nameMember, int cpfMember, String phoneMember, String emailMember, String addressMember) {
         this.nameMember = nameMember;
@@ -14,8 +16,10 @@ public class Members {
         this.phoneMember = phoneMember;
         this.emailMember = emailMember;
         this.addressMember = addressMember;
+        this.ticketId = 0;
     }
 
+    // Getters e setters
     public String getNameMember() {
         return nameMember;
     }
@@ -54,5 +58,13 @@ public class Members {
 
     public void setAddressMember(String addressMember) {
         this.addressMember = addressMember;
+    }
+
+    public int getTicketId() {
+        return ticketId;
+    }
+
+    public void setTicketId(int ticketId) {
+        this.ticketId = ticketId;
     }
 }
