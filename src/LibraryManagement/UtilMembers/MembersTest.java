@@ -22,20 +22,27 @@ public class MembersTest {
                     System.out.print("Enter name: ");
                     String name = scanner.next();
                     System.out.print("Enter CPF: ");
-                    int cpf = scanner.nextInt();
+                    long cpf = scanner.nextLong();
                     System.out.print("Enter phone: ");
                     String phone = scanner.next();
                     System.out.print("Enter email: ");
                     String email = scanner.next();
                     System.out.print("Enter address: ");
                     String address = scanner.next();
-                    System.out.print("Enter ticket ID: ");
-                    int ticketId = scanner.nextInt();
-                    membersManagement.registerNewMember(name, cpf, phone, email, address, ticketId);
+
+                    //register for new member
+                    membersManagement.registerNewMember(name, cpf, phone, email, address);
+
+                    //question the user a crate new ticket ID
+                    System.out.println("Do you want to generate a ticket id for this member? (yes/no): ");
+                    String generateTicketResponse = scanner.next();
+                    if (generateTicketResponse.equalsIgnoreCase("yes")){
+                        membersManagement.generateTicketId(cpf);
+                    }
                     break;
                 case 2:
                     System.out.print("Enter CPF: ");
-                    int cpfUpdate = scanner.nextInt();
+                    long cpfUpdate = scanner.nextLong();
                     System.out.print("Enter new name: ");
                     String nameUpdate = scanner.next();
                     System.out.print("Enter new phone: ");
@@ -48,7 +55,7 @@ public class MembersTest {
                     break;
                 case 3:
                     System.out.print("Enter CPF: ");
-                    int cpfRemove = scanner.nextInt();
+                    long cpfRemove = scanner.nextLong();
                     membersManagement.removeMember(cpfRemove);
                     break;
                 case 4:

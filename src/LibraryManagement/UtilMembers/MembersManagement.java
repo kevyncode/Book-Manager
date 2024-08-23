@@ -12,14 +12,14 @@ public class MembersManagement implements NewMembers {
     }
 
     @Override
-    public void registerNewMember(String nameMember, int cpfMember, String phoneMember, String emailMember, String addressMember, int someInt) {
+    public void registerNewMember(String nameMember, long cpfMember, String phoneMember, String emailMember, String addressMember) {
         Members member = new Members(nameMember, cpfMember, phoneMember, emailMember, addressMember);
         members.add(member);
         System.out.println("Added member: " + member.getNameMember());
     }
 
     @Override
-    public void updateInformationMember(String nameMember, int cpfMember, String phoneMember, String emailMember, String addressMember) {
+    public void updateInformationMember(String nameMember, long cpfMember, String phoneMember, String emailMember, String addressMember) {
         for (Members member : members) {
             if (member.getCpfMember() == cpfMember) {
                 member.setNameMember(nameMember);
@@ -34,7 +34,7 @@ public class MembersManagement implements NewMembers {
     }
 
     @Override
-    public void removeMember(int cpfMember) {
+    public void removeMember(long cpfMember) {
         for (Members member : members) {
             if (member.getCpfMember() == cpfMember) {
                 members.remove(member);
@@ -46,13 +46,13 @@ public class MembersManagement implements NewMembers {
     }
 
     @Override
-    public void generateTicketId(int cpfMember) {
+    public void generateTicketId(long cpfMember) {
         for (Members member : members) {
             if (member.getCpfMember() == cpfMember) {
-                int ticketId = cpfMember % 1000; // Gerar ticketId a partir do CPF
-                member.setTicketId(ticketId);
-                System.out.println("Generated ticket ID: " + ticketId);
-                return;
+             long ticketId =cpfMember % 100000;
+             member.setTicketId((int) ticketId);
+             System.out.println("Generated ticket ID: " + ticketId);
+             return;
             }
         }
         System.out.println("Member with CPF " + cpfMember + " not found.");
