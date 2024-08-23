@@ -4,13 +4,13 @@ package LibraryManagement.UtilMembers;
 public class Members {
 
     private String nameMember;
-    private int cpfMember;
+    private long cpfMember;
     private String emailMember;
     private String phoneMember;
     private String addressMember;
     private int ticketId;
 
-    public Members(String nameMember, int cpfMember, String phoneMember, String emailMember, String addressMember) {
+    public Members(String nameMember, long cpfMember, String phoneMember, String emailMember, String addressMember) {
         this.nameMember = nameMember;
         this.cpfMember = cpfMember;
         this.phoneMember = phoneMember;
@@ -28,11 +28,11 @@ public class Members {
         this.nameMember = nameMember;
     }
 
-    public int getCpfMember() {
+    public long getCpfMember() {
         return cpfMember;
     }
 
-    public void setCpfMember(int cpfMember) {
+    public void setCpfMember(long cpfMember) {
         this.cpfMember = cpfMember;
     }
 
